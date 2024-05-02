@@ -89,9 +89,9 @@
 
     <form action="index.php" method="get">
       <div class="row">
-        <div >
-          <label for="inputVote" >Vote</label>
-          <input type="number" name="searchVote" id="inputVote" min="1" max="5">
+        <div class="col-auto d-flex align-items-center">
+          <label  for="inputVote" >Vote</label>
+          <input  type="number" name="searchVote" id="inputVote" min="1" max="5">
         </div>
         
         <div class="col-auto">
@@ -104,11 +104,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th >Name</th>
-          <th >Description</th>
-          <th >Parking</th>
-          <th>Vote</th>
-          <th >Distance to center</th>
+          <th> Name </th>
+          <th> Description </th>
+          <th> Parking </th>
+          <th> Vote </th>
+          <th> Distance to center </th>
         </tr>
       </thead>
       <tbody>
