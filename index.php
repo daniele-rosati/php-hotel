@@ -50,10 +50,24 @@
     $hotels = $newArray;
   }
 
- 
+  $searchVote = isset($_GET["searchVote"]) ? $_GET["searchVote"] : "0";
 
     // resetto il mio array temporaneo
     $newArray = [];
+
+
+    foreach($hotels as $key => $value){
+        // se ha un voto maggiore o uguale al mio searchVote
+        if ($value["vote"] >=  $searchVote) {
+          $newArray[] = $value;
+        } else {
+            // se non ha un voto maggio o uguale allora non compare
+            $newArray[] = 0;
+        }
+      }
+      $hotels = $newArray;
+      
+    
 
 ?>
 
