@@ -39,6 +39,18 @@
 
   ];
 
+  // se il searchPark è abilitato modifico il mio array hotels
+  if (isset($_GET["searchPark"])) {
+    foreach($hotels as $key => $value){
+      // se ha il parcheggio lo metto nel mio array
+      if ($value["parking"]) {
+        $newArray[] = $value;
+      }
+    }
+    $hotels = $newArray;
+  }
+
+  $searchVote = isset($_GET["searchVote"]) ? $_GET["searchVote"] : "0";
 
   
 
