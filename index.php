@@ -50,9 +50,10 @@
     $hotels = $newArray;
   }
 
-  $searchVote = isset($_GET["searchVote"]) ? $_GET["searchVote"] : "0";
+ 
 
-  
+    // resetto il mio array temporaneo
+    $newArray = [];
 
 ?>
 
@@ -76,7 +77,7 @@
       <div class="row">
         <div >
           <label for="inputVote" >Vote</label>
-          <input type="number" name="searchVote" id="inputVote">
+          <input type="number" name="searchVote" id="inputVote" min="1" max="5">
         </div>
         
         <div class="col-auto">
@@ -96,7 +97,17 @@
           <th >Distance to center</th>
         </tr>
       </thead>
-      
+      <tbody>
+        <?php foreach ($hotels as $hotel):?>
+        <tr>
+          <td><?php echo $hotel["name"] ?></td>
+          <td><?php echo $hotel["description"] ?></td>
+          <td><?php echo $hotel["parking"] ? "Si" : "No" ?></td>
+          <td><?php echo $hotel["vote"] ?></td>
+          <td><?php echo $hotel["distance_to_center"] ?></td>
+        </tr>
+        <?php endforeach ?>
+      </tbody>
     </table>
 
   </div>
